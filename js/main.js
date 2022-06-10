@@ -75,20 +75,20 @@ const personalMovieDB = {
     },
 
     writeYourGenres: function () {
-        let genre;
-        for (let i = 1; i < 2 ; i++) {
-            let genre = +prompt(`Ваш любимый жанр под номером ${i}`);
-              if (genre === '' || genre == null) {
+        for (let i = 1; i < 2; i++) {
+            let genre = prompt(`Ваш любимый жанр под номером ${i}`);
+
+            if (genre === '' || genre == null) {
                 console.log('Вы ввели некорректные данные или не ввели их вовсе');
                 i--;
             } else {
                 personalMovieDB.genres[i - 1] = genre;
             } 
         }
-        personalMovieDB.genres.forEach(genre, i => {
-            console.log(`Любимый жанр ${i + 1} - это ${personalMovieDB.genres[genre]}`);
+        personalMovieDB.genres.forEach((item, i) => {
+            console.log(`Любимый жанр ${i + 1} - это ${item}`);
         });
-    },
+    }
 
 };
 
